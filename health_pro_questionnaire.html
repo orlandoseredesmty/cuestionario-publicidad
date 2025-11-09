@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Contenido para Profesionales de la Salud</title>
+    <!-- Carga de Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+        .form-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #1e3a8a; /* Azul oscuro para los títulos */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container rounded-xl">
+        <header class="mb-8 border-b-2 border-indigo-100 pb-4">
+            <h1 class="text-3xl font-bold text-indigo-700">Definición de Contenido para Profesionales</h1>
+            <p class="mt-2 text-gray-600">Este cuestionario nos ayudará a entender sus necesidades visuales y narrativas para la creación de contenido.</p>
+        </header>
+
+        <form id="contentForm" class="space-y-6">
+
+            <!-- PREGUNTA 1: Especialidad/Servicios -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label for="specialty" class="block mb-2 text-lg">1. ¿Qué especialidad maneja o qué servicios principales ofrece?</label>
+                <p class="text-sm text-gray-500 mb-2">(Ejemplo: odontología general, nutrición clínica, medicina estética, etc.)</p>
+                <input type="text" id="specialty" name="specialty" required
+                       class="w-full p-3 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <!-- PREGUNTA 2: Zona de Cobertura -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label for="zone" class="block mb-2 text-lg">2. ¿Dónde atiende actualmente o qué zona le interesa cubrir?</label>
+                <input type="text" id="zone" name="zone" required
+                       class="w-full p-3 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <!-- PREGUNTA 3: Estilo Preferido (Checkbox - Selección Múltiple) -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label class="block mb-3 text-lg">3. ¿Qué estilo prefiere para sus publicaciones?</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="style" value="Con fotos reales" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Con fotos reales (del consultorio, del profesional)</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="style" value="Solo ilustraciones" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Solo ilustraciones limpias y profesionales</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="style" value="Combinación (Foto + Ilustración)" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Combinación: foto + texto / ilustración</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="style" value="Estilo limpio y profesional" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Estilo limpio y profesional</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="style" value="Estilo amigable y educativo" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Estilo amigable y educativo</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 4: Aparición Personal (Radio - Selección Única) -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label class="block mb-3 text-lg">4. ¿Le gustaría aparecer usted en las publicaciones o prefiere que sean imágenes de stock?</label>
+                <div class="flex flex-wrap gap-4">
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="appearance" value="Aparecer yo" required class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">Aparecer yo</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="appearance" value="Imágenes de stock" class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">Imágenes de stock</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 5: Fotos Propias (Radio - Selección Única) -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label class="block mb-3 text-lg">5. ¿Tiene fotos propias que podamos usar?</label>
+                <div class="flex flex-wrap gap-4">
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="own_photos" value="Sí" required class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">Sí</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="own_photos" value="No" class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 6: Tipo de Contenido (Checkbox - Selección Múltiple) -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label class="block mb-3 text-lg">6. ¿Qué tipo de contenido le gustaría incluir este mes?</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Reels informativos" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Reels informativos (con texto en pantalla y animación)</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Reels promocionales" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Reels promocionales (invitación directa a agendar cita)</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Gráficos explicativos" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Gráficos explicativos (síntomas, tips, mitos, etc.)</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Frases o testimonios" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Frases o testimonios</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Promociones del mes" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Promociones del mes</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="checkbox" name="content_type" value="Humanización de la práctica" class="form-checkbox h-5 w-5 text-indigo-600 rounded-md">
+                        <span class="ml-3 text-gray-700">Algo que humanice su práctica (su historia, su propósito)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 7: Idea/Tema -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label for="idea_topic" class="block mb-2 text-lg">7. ¿Tiene alguna idea, frase o tema que le gustaría comunicar este mes?</label>
+                <textarea id="idea_topic" name="idea_topic" rows="4"
+                          class="w-full p-3 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+            </div>
+
+            <!-- PREGUNTA 8: Red Social Principal -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label for="social_media" class="block mb-2 text-lg">8. ¿Qué red social usa más o dónde publica sus contenidos?</label>
+                <!-- IMPORTANTE: Añadí un campo de email extra que Formspree requiere para identificar de quién viene el correo -->
+                <input type="email" id="email" name="_replyto" required 
+                       class="w-full p-3 mb-4 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" 
+                       placeholder="Su correo electrónico (para recibir notificaciones)">
+                <input type="text" id="social_media" name="social_media" required
+                       class="w-full p-3 border border-indigo-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Ej: Instagram, Facebook, TikTok">
+            </div>
+
+            <!-- PREGUNTA 9: Logo y Colores -->
+            <div class="form-group p-4 bg-indigo-50 rounded-lg shadow-sm">
+                <label class="block mb-3 text-lg">9. ¿Tiene logo y colores que quiera usar?</label>
+                <div class="flex flex-wrap gap-4">
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="logo_colors" value="Sí" required class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">Sí</span>
+                    </label>
+                    <label class="flex items-center p-3 bg-white rounded-lg shadow-md cursor-pointer hover:bg-indigo-100 transition duration-150">
+                        <input type="radio" name="logo_colors" value="No" class="form-radio h-5 w-5 text-indigo-600">
+                        <span class="ml-3 text-gray-700">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botón de Envío -->
+            <div class="pt-4">
+                <button type="submit" id="submitButton"
+                        class="w-full py-3 px-6 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-[1.01]">
+                    Enviar Respuestas
+                </button>
+            </div>
+            
+            <!-- Mensaje de Estado -->
+            <div id="statusMessage" class="text-center mt-4 p-3 rounded-lg hidden" role="alert"></div>
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitButton = document.getElementById('submitButton');
+            const statusMessage = document.getElementById('statusMessage');
+
+            // 1. Recolectar datos del formulario
+            const formData = new FormData(form);
+            const data = {};
+            
+            // Los campos de selección múltiple (checkboxes) los guardamos como arrays temporales
+            const styles = [];
+            const contentTypes = [];
+
+            // Formspree prefiere los datos en el formato 'application/x-www-form-urlencoded' 
+            // o simplemente FormData, pero para asegurar la compatibilidad y tener un mejor 
+            // control del cuerpo del correo, lo formatearemos a JSON.
+            // Para JSON, debemos procesar los checkboxes.
+            for (const [key, value] of formData.entries()) {
+                if (key === 'style') {
+                    styles.push(value);
+                } else if (key === 'content_type') {
+                    contentTypes.push(value);
+                } else {
+                    // Usar un formato amigable para Formspree (el campo '_replyto' es el email del cliente)
+                    data[key] = value;
+                }
+            }
+            
+            // Añadir los checkboxes agrupados al objeto de datos
+            data['Estilo_Preferido'] = styles.join(', ') || 'No especificado';
+            data['Tipo_de_Contenido_Mensual'] = contentTypes.join(', ') || 'No especificado';
+
+            // Nota: Formspree es muy flexible con los campos que recibe. 
+            // Usamos las claves del 'name' de los inputs para el envío.
+            const payload = {
+                specialty: data.specialty,
+                zone: data.zone,
+                style: data.Estilo_Preferido, // Campo personalizado para Formspree
+                appearance: data.appearance,
+                own_photos: data.own_photos,
+                content_type: data.Tipo_de_Contenido_Mensual, // Campo personalizado para Formspree
+                idea_topic: data.idea_topic || 'Ninguna',
+                social_media: data.social_media,
+                logo_colors: data.logo_colors,
+                // Campo requerido por Formspree para la dirección de respuesta
+                _replyto: data._replyto 
+            };
+
+            // Mostrar estado de carga
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            statusMessage.className = 'text-center mt-4 p-3 rounded-lg bg-yellow-100 text-yellow-800';
+            statusMessage.textContent = 'Enviando respuestas...';
+            statusMessage.style.display = 'block';
+
+
+            // ******************************************************************************
+            // ** URL REAL DE FORMSPREE **
+            // USAMOS LA URL COPIADA DE TU CAPTURA DE PANTALLA: https://formspree.io/f/meovjlaa
+            // ******************************************************************************
+
+            // Reemplaza esta línea con la URL de tu formulario Formspree si es diferente:
+            const API_ENDPOINT = 'https://formspree.io/f/meovjlaa'; 
+
+            
+            // 3. Envío Real a Formspree (usando JSON para mejor formato en el email)
+            fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    // Formspree permite enviar JSON. Esto generalmente da un mejor cuerpo de email.
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(async (response) => {
+                if (response.ok) {
+                    // Éxito
+                    statusMessage.className = 'text-center mt-4 p-3 rounded-lg bg-green-100 text-green-800';
+                    statusMessage.textContent = '¡Respuestas enviadas con éxito! Las recibirás en tu correo.';
+                    form.reset(); 
+                } else {
+                    // Manejo de errores de Formspree (ej. si el correo no está verificado)
+                    const errorData = await response.json();
+                    let errorMessage = 'Error al enviar (Código: ' + response.status + ').';
+                    if (errorData.error) {
+                         errorMessage += ' Causa: ' + errorData.error;
+                    }
+                    if (response.status === 422) {
+                        errorMessage = 'Error de validación: Revise si el campo de correo electrónico es válido.';
+                    } else if (response.status === 400) {
+                         errorMessage = 'Error: Verifique que la URL de Formspree sea correcta y esté verificada.';
+                    }
+                    
+                    console.error('Error de envío:', errorMessage);
+                    statusMessage.className = 'text-center mt-4 p-3 rounded-lg bg-red-100 text-red-800';
+                    statusMessage.textContent = errorMessage;
+                }
+            })
+            .catch((error) => {
+                // Errores de red
+                console.error('Error de red:', error);
+                statusMessage.className = 'text-center mt-4 p-3 rounded-lg bg-red-100 text-red-800';
+                statusMessage.textContent = 'Error de conexión. Asegúrese de tener internet o revise la consola.';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Enviar Respuestas';
+            });
+        });
+    </script>
+</body>
+</html>
